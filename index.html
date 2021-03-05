@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fi">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel = "stylesheet" href ="scrabblestyle.css">
+<head>
+    <script src="https://kit.fontawesome.com/ae0ba50448.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+    <script src="menus.js"></script>
+    <link rel="icon" type="image/ico" href="myicon2.png" />
+    <title>Scrabble-apuri</title>
+</head>
+
+<body onload="valikot()">
+
+<header>
+    <div id="header"></div>
+    <!--    <div class="icons" id="icons"></div>-->
+</header>
+<div id="hero">Pussissa jäljellä <span id="tiles-left">86</span> laattaa.</div>
+<div class="content" id="tiles-all">
+<!-- Manuaalisesti tehdyt kirjainlaatat. Asioitten lisääminen näin tekemällä on tuskaa. Siksi koetan tehdä saman JavaScript-loopilla.
+<div class="full-let">
+        <div class="letter" onclick="clickdown('let-a')">
+            <div class="alphabet">A</div> 
+            <div class="val">1</div>
+        </div>
+        <div class="undo" onclick="clickup('let-a')">x 
+            <span class="amount" id="let-a">10</span>
+            <div class="origamount">10</div>
+        </div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-b')">
+        <div class="alphabet">B</div> 
+    <div class="val">8</div></div><div class="undo" onclick="clickup('let-b')">x <span class="amount" id="let-b">1</span>
+        <div class="origamount">1</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-c')"><div class="alphabet">C</div> 
+    <div class="val">10</div></div><div class="undo" onclick="clickup('let-c')">x <span class="amount" id="let-c">1</span>
+        <div class="origamount">1</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-d')"><div class="alphabet">D</div> 
+    <div class="val">7</div></div><div class="undo" onclick="clickup('let-d')">x <span class="amount" id="let-d">1</span>
+        <div class="origamount">1</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-e')"><div class="alphabet">E</div> 
+    <div class="val">1</div></div><div class="undo" onclick="clickup('let-e')">x <span class="amount" id="let-e">8</span>
+        <div class="origamount">8</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-f')"><div class="alphabet">F</div> 
+    <div class="val">8</div></div><div class="undo" onclick="clickup('let-f')">x <span class="amount" id="let-f">1</span>
+        <div class="origamount">1</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-g')"><div class="alphabet">G</div> 
+    <div class="val">8</div></div><div class="undo" onclick="clickup('let-g')">x <span class="amount" id="let-g">1</span>
+        <div class="origamount">1</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-h')"><div class="alphabet">H</div> 
+    <div class="val">4</div></div><div class="undo" onclick="clickup('let-h')">x <span class="amount" id="let-h">2</span>
+        <div class="origamount">2</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-i')"><div class="alphabet">I</div> 
+    <div class="val">1</div></div><div class="undo" onclick="clickup('let-i')">x <span class="amount" id="let-i">10</span>
+        <div class="origamount">10</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-j')"><div class="alphabet">J</div> 
+    <div class="val">4</div></div><div class="undo" onclick="clickup('let-j')">x <span class="amount" id="let-j">2</span>
+        <div class="origamount">2</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-k')"><div class="alphabet">K</div> 
+    <div class="val">2</div></div><div class="undo" onclick="clickup('let-k')">x <span class="amount" id="let-k">5</span>
+        <div class="origamount">5</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-l')"><div class="alphabet">L</div> 
+    <div class="val">2</div></div><div class="undo" onclick="clickup('let-l')">x <span class="amount" id="let-l">5</span>
+        <div class="origamount">5</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-m')"><div class="alphabet">M</div> 
+    <div class="val">3</div></div><div class="undo" onclick="clickup('let-m')">x <span class="amount" id="let-m">3</span>
+        <div class="origamount">3</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-n')"><div class="alphabet">N</div> 
+    <div class="val">1</div></div><div class="undo" onclick="clickup('let-n')">x <span class="amount" id="let-n">9</span>
+        <div class="origamount">9</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-o')"><div class="alphabet">O</div> 
+    <div class="val">2</div></div><div class="undo" onclick="clickup('let-o')">x <span class="amount" id="let-o">5</span>
+        <div class="origamount">5</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-p')"><div class="alphabet">P</div> 
+    <div class="val">4</div></div><div class="undo" onclick="clickup('let-p')">x <span class="amount" id="let-p">2</span>
+        <div class="origamount">2</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-r')"><div class="alphabet">R</div> 
+    <div class="val">4</div></div><div class="undo" onclick="clickup('let-r')">x <span class="amount" id="let-r">2</span>
+        <div class="origamount">2</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-s')"><div class="alphabet">S</div> 
+    <div class="val">1</div></div><div class="undo" onclick="clickup('let-s')">x <span class="amount" id="let-s">7</span>
+        <div class="origamount">7</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-t')"><div class="alphabet">T</div> 
+    <div class="val">1</div></div><div class="undo" onclick="clickup('let-t')">x <span class="amount" id="let-t">9</span>
+        <div class="origamount">9</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-u')"><div class="alphabet">U</div> 
+    <div class="val">3</div></div><div class="undo" onclick="clickup('let-u')">x <span class="amount" id="let-u">4</span>
+        <div class="origamount">4</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-v')"><div class="alphabet">V</div> 
+    <div class="val">4</div></div><div class="undo" onclick="clickup('let-v')">x <span class="amount" id="let-v">2</span>
+        <div class="origamount">2</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-y')"><div class="alphabet">Y</div> 
+    <div class="val">4</div></div><div class="undo" onclick="clickup('let-y')">x <span class="amount" id="let-y">2</span>
+        <div class="origamount">2</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-ä')"><div class="alphabet">Ä</div> 
+    <div class="val">2</div></div><div class="undo" onclick="clickup('let-ä')">x <span class="amount" id="let-ä">5</span>
+        <div class="origamount">5</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-ö')"><div class="alphabet">Ö</div> 
+    <div class="val">7</div></div><div class="undo" onclick="clickup('let-ö')">x <span class="amount" id="let-ö">1</span>
+        <div class="origamount">1</div></div>
+</div>
+<div class="full-let">
+    <div class="letter" onclick="clickdown('let-null')">
+        <div class="alphabet"></div> 
+        <div class="val"></div>
+    </div>
+    <div class="undo" onclick="clickup('let-null')">x <span class="amount" id="let-null">2</span>
+        <div class="origamount">2</div></div>
+</div>
+-->
+</div>
+
+
+
+
+
+    
+<footer class="footer" id="footer"></footer>
+</body>
+<script src="menus.js"></script>
+<script>
+
+// window.onload = function() {
+// const kirjaimet = document.querySelectorAll(".letter");
+// for (var i = 0; i < kirjaimet.length; i++) {
+//     kirjaimet[i].addEventListener("click",function() {
+//         console.log(kirjaimet.length);
+//     })}}
+
+    function clickdown(x) {
+        let thisvalue = document.getElementById(x).innerHTML;
+        let bagvalue = document.getElementById("tiles-left").innerHTML;
+        let z = parseInt(bagvalue);
+        let y = parseInt(thisvalue);
+        let findempty = document.querySelectorAll(".letter");
+            
+
+        
+        if (thisvalue < 1) {
+            console.log("kaik on jo mänt");
+            document.getElementById(x).classList.add("is-empty");
+            // for (var i = 0; i < findempty.length; i++) {
+            //     findempty[i].addEventListener("click",function() {
+            //     this.classList.add("is-empty");
+            //     })
+            // }
+            
+        } else {
+            document.getElementById(x).innerHTML = y - 1;
+                if (bagvalue < 1) {
+                    console.log("pussista loppu jo palikat");
+                } else {
+                document.getElementById("tiles-left").innerHTML = z - 1;
+                }
+        }
+    };
+    function clickup(x) {
+        let thisvalue = document.getElementById(x).innerHTML;
+        let bagvalue = document.getElementById("tiles-left").innerHTML;
+        let z = parseInt(bagvalue);
+        let y = parseInt(thisvalue);
+        document.getElementById(x).innerHTML = y + 1;
+        document.getElementById("tiles-left").innerHTML = z + 1;
+    };
+
+
+</script>
+</html>
