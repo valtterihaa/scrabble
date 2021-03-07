@@ -37,13 +37,11 @@
         let findempty = document.querySelectorAll(".letter");
             
 
-        
+        console.log("ennen kaikkea "+thisvalue)
         if (thisvalue == 0) {
             console.log("kaik on mänt");
-            parent.classList.add("is-empty");
-        } else if (thisvalue == 0) {
-            alert("wtf");
-        } 
+            
+        }
         
         else {
             document.getElementById(x).innerHTML = y - 1;
@@ -53,7 +51,11 @@
                 document.getElementById("tiles-left").innerHTML = z - 1;
                 }
         }
-        
+        let final = parseInt(document.getElementById(x).innerHTML);
+        console.log("kaiken jälkeen "+final);
+        if (final==0){
+            parent.classList.add("is-empty");
+        }
 
         
     };
