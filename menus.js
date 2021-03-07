@@ -1,6 +1,4 @@
-function valikot() {
-    document.getElementById("header").innerHTML = 
-    "<h1>SCRABBLE-APURI</h1>";
+window.onload = function (){
 
 // Aloitetaan maintainable coden teko looppaamalla sisällöt.
 // Ensin arrayt jossa laattojen kirjaimet ja arvot, sekä kaikkiin tulevat id:t.
