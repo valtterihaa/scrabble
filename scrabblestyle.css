@@ -23,8 +23,8 @@ header {
     text-align: center;
     background-color: rgb(240, 238, 137);
     color: rgb(2, 87, 27);
-    padding: 25px 0 25px 0;
-    box-shadow: 0px 10px 21px rgb(69,69,69);
+    padding: 15px 0 15px 0;
+    box-shadow: 0px 6px 12px rgb(69,69,69);
     
 }
 
@@ -51,41 +51,46 @@ footer {
 /* templaatti päättyy */
 
 #hero {
-    margin: 1rem auto -20px auto;
+    margin: 1.2rem auto -1.2rem auto;
     text-align: center;
 }
 
+.content {
+    width: 420px;
+}
+
 .letter {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     position: relative;
-    padding-top: 3px;
+    padding-top: 6%;
     width: 50px;
     height: 50px;
-    margin: 10px 15px auto auto;
+    margin: 10px 6px auto auto;
     background-color: rgb(240, 238, 137);
+    /* font-size: 3.5em; */
     font-size: xx-large;
     text-align: center;
     color: rgb(2, 87, 27);
     border: solid 1px rgb(163, 162, 91);
-    border-radius: 5px;
+    border-radius: 10%;
     cursor: pointer;
 }
 
 .letter .val {
-    font-size: 10px;
+    font-size: 35%;
     position: relative;
-    left: 15px;
-    margin-top: -8px;
+    left: 30%;
+    margin-top: -18%;
     -webkit-user-select: none;
     user-select: none;
 }
 
 .undo {
     width: 50px;
-    line-height: 28px;
+    line-height: 26px;
     background-color: rgb(235, 148, 98);
     text-align: center;
-    margin-top: 4px;
+    margin-top: 8%;
     border-style: outset;
     border-color: rgb(182, 182, 182);
 /*    border: solid 1px black;*/
@@ -93,7 +98,7 @@ footer {
 }
 
 .undo .origamount {
-    font-size: 10px;
+    font-size: 25%;
     margin-top: -15px;
     margin-bottom: -8px;
     margin-right: 4px;
@@ -102,4 +107,14 @@ footer {
 
 .is-empty {
     opacity: 0.25;
+}
+
+@media only screen and (max-width: 435px) {
+    .content {
+        width: 320px;
+    }
+    .letter {
+        margin: 10px 6px auto auto;
+
+    }
 }
