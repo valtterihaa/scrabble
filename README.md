@@ -20,3 +20,8 @@ The UI is as follows:
     - this helper is only as good as the data it receives; i.e, you need to manually enter the tiles that have been played, preferably after each turn. When the board becomes more full, you will need to be careful not to deduct tiles that were already on the board, which should already have been deducted.
 
     If anyone actually reads this and/or uses this helper, that's awesome! I am open to suggestions and advice on how to improve my code.
+
+    improvements: 
+    - removed inline onclick stuffs, replaced with eventlisteners
+    - added check for situations where user accidentally clicks letter down to zero.
+    Before, the letter would have still had lowered opacity, but this check returns that to the default.
