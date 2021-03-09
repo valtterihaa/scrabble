@@ -25,3 +25,4 @@ The UI is as follows:
     - removed inline onclick stuffs, replaced with eventlisteners
     - added check for situations where user accidentally clicks letter down to zero.
     Before, the letter would have still had lowered opacity, but this check returns that to the default.
+    - user cannot add letters to more than the original amount
