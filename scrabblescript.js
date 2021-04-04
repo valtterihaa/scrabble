@@ -1,4 +1,5 @@
 window.onload = function() {
+    // Finnish letters
     const finLetter = [
         {
             letter: 'A',
@@ -121,12 +122,17 @@ window.onload = function() {
             value: '7'
         },
         {
-            letter: "",
+            letter: '',
             amount: '2',
-            value: ""
-        }
+            value: ''
+        },
+        // {
+        //     letter: '–',
+        //     amount: '0',
+        //     value: '0'
+        // }
     ];
-
+    // Make tiles
     for (var i = 0; i < finLetter.length; i++) {
         let makeSmall = finLetter[i].letter.toLowerCase();
         document.getElementById("tiles-all").innerHTML += 
@@ -141,7 +147,7 @@ window.onload = function() {
             '</div>' +
         '</div>';
     };
-
+    // Counters
     let clickedLetter = document.querySelectorAll(".letter");
     for (i = 0; i<clickedLetter.length; i++){
         clickedLetter[i].addEventListener("click", function() {
@@ -149,6 +155,7 @@ window.onload = function() {
             let firstValue = parseInt(deduct.innerHTML);
             let bagvalue = document.getElementById("tiles-left").innerHTML;
             let z = parseInt(bagvalue);
+            let gottenLetter = this.firstElementChild.innerHTML;
             if (firstValue == 0) {
                 console.log("kaik on jo mänt");
             } else {
@@ -157,16 +164,17 @@ window.onload = function() {
                     console.log("pussista loppu jo palikat");
                 } else {
                     document.getElementById("tiles-left").innerHTML = z - 1;
+                    markLetter(gottenLetter);
                 }
             }
             let hehe = this.nextElementSibling.firstElementChild;
             let lastValue = parseInt(hehe.innerHTML);
             if (lastValue == 0){
-                console.log("onko sama kuin alempi"+this.innerHTML)
                 this.classList.add("is-empty");
             }
         });
     };
+    // Undo counter
     let clickedUndo = document.querySelectorAll(".undo");
     for (i = 0; i < clickedUndo.length; i++){
         clickedUndo[i].addEventListener("click", function(){
@@ -188,4 +196,25 @@ window.onload = function() {
             }
         })
     }
+    let usedLetters = document.getElementById("usedLetters");
+    let endTurn = document.getElementById("endturn");
+
+    endTurn.addEventListener("click", () => {
+        let turn = endTurn.getAttribute("value");
+        usedLetters.innerHTML += `<br>P${turn}: `;
+        if (turn == 1){
+            endTurn.removeAttribute("value");
+            endTurn.setAttribute("value","2");
+        }
+        if (turn == 2) {
+            endTurn.removeAttribute("value");
+            endTurn.setAttribute("value","1");
+        }
+    })
+
+    function markLetter(letterToAdd){
+        if (letterToAdd == '') usedLetters.innerHTML += '#';
+        usedLetters.innerHTML += `${letterToAdd}`;
+    }
+
 };
