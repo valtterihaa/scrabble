@@ -216,5 +216,4 @@ window.onload = function() {
         if (letterToAdd == '') usedLetters.innerHTML += '#';
         usedLetters.innerHTML += `${letterToAdd}`;
     }
-
 };
