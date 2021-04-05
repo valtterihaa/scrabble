@@ -153,8 +153,8 @@ window.onload = function() {
         clickedLetter[i].addEventListener("click", function() {
             let deduct = this.nextElementSibling.firstElementChild;
             let firstValue = parseInt(deduct.innerHTML);
-            let bagvalue = document.getElementById("tiles-left").innerHTML;
-            let z = parseInt(bagvalue);
+            let bagvalue = document.getElementById("tiles-left");
+            let z = parseInt(bagvalue.innerHTML);
             let gottenLetter = this.firstElementChild.innerHTML;
             if (firstValue == 0) {
                 console.log("kaik on jo mänt");
@@ -201,6 +201,7 @@ window.onload = function() {
 
     endTurn.addEventListener("click", () => {
         let turn = endTurn.getAttribute("value");
+        
         usedLetters.innerHTML += `<br>P${turn}: `;
         if (turn == 1){
             endTurn.removeAttribute("value");
