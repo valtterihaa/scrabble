@@ -55,6 +55,12 @@ footer {
 }
 
 /* kirjainlaatat & undo */
+
+.full-let {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
 .letter {
     position: relative;
     padding-top: 6%;
@@ -68,6 +74,7 @@ footer {
     border: solid 1px rgb(163, 162, 91);
     border-radius: 10%;
     cursor: pointer;
+  
 }
 
 .letter .val {
@@ -75,8 +82,7 @@ footer {
     position: relative;
     left: 30%;
     margin-top: -18%;
-    -webkit-user-select: none;
-    user-select: none;
+    
 }
 
 .undo {
@@ -89,6 +95,7 @@ footer {
     border-style: outset;
     border-color: rgb(182, 182, 182);
     cursor: pointer;
+    
 }
 
 .undo .origamount {
@@ -97,6 +104,7 @@ footer {
     margin-bottom: -8px;
     margin-right: 4px;
     text-align: right;
+    
 }
 
 .is-empty {

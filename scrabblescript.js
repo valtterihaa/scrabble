@@ -151,21 +151,26 @@ window.onload = function() {
     let clickedLetter = document.querySelectorAll(".letter");
     for (i = 0; i<clickedLetter.length; i++){
         clickedLetter[i].addEventListener("click", function() {
+            // deduct katsoo määrää
             let deduct = this.nextElementSibling.firstElementChild;
             let firstValue = parseInt(deduct.innerHTML);
-            let bagvalue = document.getElementById("tiles-left");
-            let z = parseInt(bagvalue.innerHTML);
+            let bagvalue = document.getElementById("tiles-left").innerHTML;
+            let z = parseInt(bagvalue);
             let gottenLetter = this.firstElementChild.innerHTML;
             if (firstValue == 0) {
                 console.log("kaik on jo mänt");
             } else {
                 deduct.innerHTML = firstValue - 1;
-                if (bagvalue < 1){
-                    console.log("pussista loppu jo palikat");
-                } else {
+                markLetter(gottenLetter);
+                if (bagvalue >= 1){
                     document.getElementById("tiles-left").innerHTML = z - 1;
-                    markLetter(gottenLetter);
-                }
+                } 
+                // if (bagvalue < 1){
+                //     console.log("pussista loppu jo palikat");
+                // } else {
+                //     document.getElementById("tiles-left").innerHTML = z - 1;
+                    
+                // }
             }
             let hehe = this.nextElementSibling.firstElementChild;
             let lastValue = parseInt(hehe.innerHTML);
