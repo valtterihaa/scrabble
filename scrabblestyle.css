@@ -21,6 +21,7 @@ header {
     color: rgb(2, 87, 27);
     line-height: 4em;
     text-align: center;
+    box-shadow: black 0 0 12px;
 }
 footer {
     margin-top: 3em;
@@ -43,6 +44,8 @@ footer {
     margin-bottom: 3em;
     display: grid;
     grid-template-columns: 3fr 2fr;
+    width: 400px;
+    margin: auto;
 }
 
 .content {
@@ -51,7 +54,8 @@ footer {
     justify-content: center;
     width: 350px;
     height: fit-content;
-    margin-left: 2em;
+    margin-left: -2em;
+    margin-bottom: 3em;
 }
 
 /* kirjainlaatat & undo */
@@ -74,7 +78,6 @@ footer {
     border: solid 1px rgb(163, 162, 91);
     border-radius: 10%;
     cursor: pointer;
-  
 }
 
 .letter .val {
@@ -115,7 +118,7 @@ footer {
 .turns {
     display: block;
     margin-left: 1em;
-    width: auto;
+    width: 100px;
 }
 
 .endturn {
@@ -131,27 +134,23 @@ footer {
 }
 /* Sisältö päättyy */
 
-/* breakpointit, vielä voisi ehkä hioa */
+/* breakpointit */
 @media only screen and (max-width: 600px) {
-    /* * {
-        margin: 0;
-        padding: 0;
-    } */
-    
     .content {
         width: 320px;
         flex-direction: row;
-        margin-left: 0;
+        margin-left: -0.9em;
     }
 
     .game {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
+        width: auto;
     }
 
     .turns {
-        margin-left: -10px;
+        margin-left: -14px;
     }
 
     .undo {
@@ -173,7 +172,7 @@ footer {
     
 }
 
-@media only screen and (max-width: 440px) {
+@media only screen and (max-width: 413px) {
     .game {
         display: flex;
         justify-content: center;
@@ -181,12 +180,15 @@ footer {
     .content {
         width: 250px;
         margin-left: -1em;
+        margin-bottom: 3em;
     }
     .undo {
         margin-bottom: 0.1em;
     }
     .endturn {
-        width: 80px;
+        width: 100%;
     }
-    
+    .turns {
+        margin-left: -12px;
+    }
 }

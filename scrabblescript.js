@@ -154,15 +154,15 @@ window.onload = function() {
             // deduct katsoo määrää
             let deduct = this.nextElementSibling.firstElementChild;
             let firstValue = parseInt(deduct.innerHTML);
-            let bagvalue = document.getElementById("tiles-left").innerHTML;
-            let z = parseInt(bagvalue);
+            let bagValue = document.getElementById("tiles-left").innerHTML;
+            let z = parseInt(bagValue);
             let gottenLetter = this.firstElementChild.innerHTML;
             if (firstValue == 0) {
                 console.log("kaik on jo mänt");
             } else {
                 deduct.innerHTML = firstValue - 1;
                 markLetter(gottenLetter);
-                if (bagvalue >= 1){
+                if (bagValue >= 1){
                     document.getElementById("tiles-left").innerHTML = z - 1;
                 } 
                 // if (bagvalue < 1){
@@ -172,8 +172,8 @@ window.onload = function() {
                     
                 // }
             }
-            let hehe = this.nextElementSibling.firstElementChild;
-            let lastValue = parseInt(hehe.innerHTML);
+            let checkEmpty = this.nextElementSibling.firstElementChild;
+            let lastValue = parseInt(checkEmpty.innerHTML);
             if (lastValue == 0){
                 this.classList.add("is-empty");
             }
@@ -220,6 +220,6 @@ window.onload = function() {
 
     function markLetter(letterToAdd){
         if (letterToAdd == '') usedLetters.innerHTML += '#';
-        usedLetters.innerHTML += `${letterToAdd}`;
+        usedLetters.innerHTML += letterToAdd;
     }
 };
